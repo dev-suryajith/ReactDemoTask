@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Register({ setLogin }) {
+  const navigate = useNavigate()
   const [userdata, setUserData] = useState({
     name: "",
     email: "",
@@ -24,6 +26,7 @@ function Register({ setLogin }) {
       setUserData(updatedUser)
       sessionStorage.setItem("userInfo", JSON.stringify(updatedUser))
       alert("Registration successful!")
+      navigate('/dashboard')
     } else {
       alert("Passwords do not match")
     }

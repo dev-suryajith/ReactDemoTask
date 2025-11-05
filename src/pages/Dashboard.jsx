@@ -13,8 +13,8 @@ function Dashboard() {
   }, [])
 
   const handleLogout = () => {
-    sessionStorage.removeItem("userInfo")
-    navigate("/login")
+    setUser(null)
+    navigate("/")
   }
 
   return (
